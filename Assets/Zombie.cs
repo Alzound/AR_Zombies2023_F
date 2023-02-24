@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
+  
+
     private ParticleSystem pSystem;
     private Animator animator;
     public AnimationClip DieAnim;
@@ -12,7 +14,8 @@ public class Zombie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        pSystem = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -30,8 +33,10 @@ public class Zombie : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
-            animator.Play(DieAnim.name);
-            pSystem.Play(); 
+            Debug.Log("Muerto");
+            /*animator.Play(DieAnim.name);
+            pSystem.Play(); */
         }
     }
+   
 }

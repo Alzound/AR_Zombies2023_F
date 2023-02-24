@@ -6129,7 +6129,6 @@ GameObject:
   - component: {fileID: 3838271136996828222}
   - component: {fileID: 4785639166879661215}
   - component: {fileID: 8696030243423908538}
-  - component: {fileID: 2298459915448969811}
   m_Layer: 0
   m_Name: ZombieCartoon
   m_TagString: Player
@@ -11001,19 +11000,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &2298459915448969811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6856529127888484851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f3c37ae9a5e9046bc5d808d94f058a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DieAnim: {fileID: 0}
 --- !u!1 &6856529127888484853
 GameObject:
   m_ObjectHideFlags: 0
