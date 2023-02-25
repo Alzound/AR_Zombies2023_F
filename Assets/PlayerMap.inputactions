@@ -1,0 +1,46 @@
+{
+    "name": "PlayerMap",
+    "maps": [
+        {
+            "name": "MobileMap",
+            "id": "1e502af8-898d-433a-8d23-df04e03c45f5",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "Value",
+                    "id": "6d55957f-380f-4206-8ff7-f8e63343b2ac",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "465a58e8-545b-40f1-8cea-16faff36e8b8",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mobile",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mobile",
+            "bindingGroup": "Mobile",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
