@@ -14,10 +14,9 @@ public class BulletMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Vector3 force = new Vector3(0, 0, b_Speed * Time.deltaTime);     
-        rb.AddForce(force, ForceMode.Impulse);
-       
+        float desiredSpeed = b_Speed * Time.deltaTime;
+       rb.velocity = transform.forward * desiredSpeed;
+
     }
 
     private void OnCollisionEnter(Collision collision)
