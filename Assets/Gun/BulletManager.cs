@@ -12,8 +12,9 @@ public class BulletManager : MonoBehaviour
 
     [Header("Effect")]
     public ParticleSystem effect;
+    public Animator animator; 
     public AudioSource gunEffect;
-    public AudioClip gun;
+    public AudioClip gun, shell;
 
     [Header("Bullet")]
     public List<GameObject> bullets_Container = new List<GameObject>(); //lista para contener balas
@@ -58,16 +59,25 @@ public class BulletManager : MonoBehaviour
     
     public GameObject getNewBullet() //esta funcion es para darle un objeto desactivado al input y que este lo active
     {
-        for (int i = 0; i <= amount; i++)  
+        if(amount > 0)
         {
-            if (!bullets_Container[i].activeInHierarchy) //comienza el conteo, si no esta activo, lo manda al input pasando por todos los objetos
+            for (int i = 0; i <= amount; i++)
             {
-                return bullets_Container[i];
+                if (!bullets_Container[i].activeInHierarchy) //comienza el conteo, si no esta activo, lo manda al input pasando por todos los objetos
+                {
+                    return bullets_Container[i];
+
+                }
+                amount--;
             }
-
         }
-
-        return null; 
+        if(amount <= 0)
+        {
+             
+            animator.SetBool("reload", true);
+            Debug.Log("reload anim");
+        }
+        return null;
     }
 
     /*
@@ -92,13 +102,14 @@ public class BulletManager : MonoBehaviour
     public void TouchPressed(InputAction.CallbackContext context)
     {
         //Debug.Log("tap");
-        var bullet = getNewBullet(); //lama al objeto 
-        if (currentTime >= timeBetweenShoots)//solo falta ponerle el input mobile
+        var bullet = getNewBullet(); //llama al objeto 
+        if (currentTime >= timeBetweenShoots)
         {
             if (bullet == null)
                 return;
             effect.Play();
-            gunEffect.PlayOneShot(gun); 
+            gunEffect.PlayOneShot(gun);
+            gunEffect.PlayOneShot(shell); 
             bullet.transform.position = new Vector3(referencePosition.transform.position.x, referencePosition.transform.position.y, referencePosition.transform.position.z);
             var rot = referenceRotation.transform.rotation;
             bullet.transform.rotation = rot;
@@ -106,4 +117,12 @@ public class BulletManager : MonoBehaviour
             currentTime = 0;
         }
     }
+
+    public void ReloadGun()
+    {
+        Debug.Log("ReloadGun_false");
+        animator.SetBool("reload", false);
+        amount = 10;
+    }
+
 }
