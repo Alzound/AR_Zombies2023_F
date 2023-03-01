@@ -68,7 +68,7 @@ public class BulletManager : MonoBehaviour
                     return bullets_Container[i];
 
                 }
-                amount--;
+                
             }
         }
         if(amount <= 0)
@@ -115,6 +115,7 @@ public class BulletManager : MonoBehaviour
             bullet.transform.rotation = rot;
             bullet.SetActive(true);
             currentTime = 0;
+            amount--;
         }
     }
 

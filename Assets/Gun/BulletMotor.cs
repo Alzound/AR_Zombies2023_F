@@ -10,13 +10,14 @@ public class BulletMotor : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * b_Speed;
     }
     // Update is called once per frame
     void Update()
     {
-        float desiredSpeed = b_Speed * Time.deltaTime;
-       rb.velocity = transform.forward * desiredSpeed;
-
+       
+        //transform.position += transform.forward * desiredSpeed;
+       
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,5 +26,12 @@ public class BulletMotor : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+    }
+
+    private void OnEnable()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * b_Speed;
+
     }
 }
