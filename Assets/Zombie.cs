@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Zombie : MonoBehaviour
 {
-
+    [SerializeField] private TextMeshProUGUI zombies;
+    int numberone = 0;
     private Rigidbody rb;
     private ParticleSystem pSystem;
     private Animator animator;
@@ -42,6 +44,9 @@ public class Zombie : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
+            numberone = +1;
+            zombies.text = numberone.ToString();
+            this.gameObject.SetActive(false);
             Debug.Log("Muerto");
             anim.Play();
             pSystem.Play(); 
