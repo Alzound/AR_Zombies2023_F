@@ -31,6 +31,7 @@ public class BulletManager : MonoBehaviour
     private float currentTime = 0;
 
     [SerializeField] public TextMeshProUGUI counterBullet;
+    [SerializeField] public GameObject warningImage;
 
     private void Awake()
     {
@@ -126,5 +127,14 @@ public class BulletManager : MonoBehaviour
         Debug.Log("ReloadGun_false");
         animator.SetBool("reload", false);
         amount = 10;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (this.gameObject.CompareTag("Warning") && other.transform.CompareTag("Zombie"))
+        {
+            GameObject lostImage = Instantiate(warningImage);
+            lostImage.SetActive(false);
+        }
     }
 }
