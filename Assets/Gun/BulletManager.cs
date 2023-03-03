@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class BulletManager : MonoBehaviour
 {
@@ -27,7 +28,9 @@ public class BulletManager : MonoBehaviour
     public float timeBetweenShoots = 1;
   
 
-    private float currentTime = 0; 
+    private float currentTime = 0;
+
+    [SerializeField] public TextMeshProUGUI counterBullet;
 
     private void Awake()
     {
@@ -66,9 +69,7 @@ public class BulletManager : MonoBehaviour
                 if (!bullets_Container[i].activeInHierarchy) //comienza el conteo, si no esta activo, lo manda al input pasando por todos los objetos
                 {
                     return bullets_Container[i];
-
                 }
-                
             }
         }
         if(amount <= 0)
@@ -116,6 +117,7 @@ public class BulletManager : MonoBehaviour
             bullet.SetActive(true);
             currentTime = 0;
             amount--;
+            counterBullet.text = amount.ToString();
         }
     }
 
@@ -125,5 +127,4 @@ public class BulletManager : MonoBehaviour
         animator.SetBool("reload", false);
         amount = 10;
     }
-
 }

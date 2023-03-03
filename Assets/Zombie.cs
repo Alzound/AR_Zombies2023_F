@@ -29,13 +29,17 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveToPlayer();
+        transform.LookAt(player.transform.position);
+        if (Vector3.Distance(transform.position, player.transform.position) >= 2)
+        {
+            MoveToPlayer();
+        }
     }
 
     private void MoveToPlayer()
     {
        
-        transform.LookAt(player.transform.position);
+      
         rb.position = Vector3.Lerp(rb.position, player.transform.position, speed);
         
     }
