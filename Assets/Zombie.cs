@@ -47,11 +47,18 @@ public class Zombie : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
-            this.gameObject.SetActive(false);
+            anim.Play(DieAnim.name);
+            pSystem.Play();
+            StartCoroutine(DeathSequence()); 
             Debug.Log("Muerto");
-            anim.Play();
-            pSystem.Play(); 
         }
+    }
+
+    public IEnumerator DeathSequence() 
+    {
+        
+        yield return new WaitForSeconds(1.5f);
+        this.gameObject.SetActive(false);
     }
    
 }
