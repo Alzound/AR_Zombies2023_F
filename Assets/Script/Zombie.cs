@@ -5,12 +5,13 @@ using TMPro;
 
 public class Zombie : MonoBehaviour
 {
-    int numberone = 0;
+    private int numberone = 0;
     private Rigidbody rb;
     private ParticleSystem pSystem;
     private Animator animator;
     private Animation anim;
-    public AnimationClip DieAnim;
+    private bool isDeath; 
+    //public AnimationClip DieAnim, walkZombie;
     public float speed;
 
     public GameObject player;
@@ -33,32 +34,44 @@ public class Zombie : MonoBehaviour
         {
             MoveToPlayer();
         }
+        else
+        {
+            animator.SetBool("walk", false);
+            animator.SetBool("attack", true);
+        }
     }
 
     private void MoveToPlayer()
     {
-       
-      
-        rb.position = Vector3.Lerp(rb.position, player.transform.position, speed);
-        
+        if(isDeath == false)
+        {
+            animator.SetBool("walk", true);
+            rb.position = Vector3.Lerp(rb.position, player.transform.position, speed);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
-            anim.Play(DieAnim.name);
+            isDeath = true; 
+            if(animator.GetBool("walk") || animator.GetBool("attack"))
+            {
+                Debug.Log("enter death"); 
+                animator.SetBool("walk", false);
+                animator.SetBool("attack", false);
+            }
+            animator.SetBool("death", true);
             pSystem.Play();
             StartCoroutine(DeathSequence()); 
-            Debug.Log("Muerto");
         }
     }
 
     public IEnumerator DeathSequence() 
     {
-        
         yield return new WaitForSeconds(1.5f);
         this.gameObject.SetActive(false);
+        isDeath = false; 
     }
    
 }

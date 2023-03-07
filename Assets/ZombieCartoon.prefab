@@ -4923,8 +4923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f3c37ae9a5e9046bc5d808d94f058a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombies: {fileID: 0}
-  DieAnim: {fileID: 0}
   speed: 0
   player: {fileID: 0}
 --- !u!1 &6856529127888484737
@@ -6172,10 +6170,10 @@ Animation:
   m_GameObject: {fileID: 6856529127888484851}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ec82f8817523b104a90d8631a4731fd2, type: 3}
+  m_Animation: {fileID: 7400000, guid: 9e8a675190fb9614ba310b0030936259, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: ec82f8817523b104a90d8631a4731fd2, type: 3}
-  - {fileID: 7400000, guid: 36f951038cccf164c8901048aeb4fb9e, type: 3}
+  - {fileID: 7400000, guid: 9e8a675190fb9614ba310b0030936259, type: 2}
   - {fileID: 7400000, guid: f526e6e8255f26342b192b50f9049371, type: 3}
   - {fileID: 7400000, guid: 06689d51a8d73824486a40ff8be6851d, type: 3}
   - {fileID: 7400000, guid: 3ecba64dd011a0e4eaeedddb3e5157ab, type: 3}
@@ -6226,8 +6224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f3c37ae9a5e9046bc5d808d94f058a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombies: {fileID: 0}
-  DieAnim: {fileID: 7400000, guid: 19d74c2130de9ce40ac7e4c763504672, type: 3}
   speed: 0.001
   player: {fileID: 0}
 --- !u!198 &4785639166879661215
@@ -11048,7 +11044,7 @@ Animator:
   m_GameObject: {fileID: 6856529127888484851}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2cfd25468785224b8ec2e68a2d85f2c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
