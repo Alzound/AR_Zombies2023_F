@@ -62,11 +62,6 @@ public class BulletManager : MonoBehaviour
     private void Update()
     {
         currentTime += Time.deltaTime; //inicia un contador
-        if (health <= 0)
-        {
-            Death();
-        }
-
     }
 
     public GameObject getNewBullet() //esta funcion es para darle un objeto desactivado al input y que este lo active
@@ -144,9 +139,13 @@ public class BulletManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (this.gameObject.CompareTag("Warning") && other.transform.CompareTag("Zombie"))
+        if (other.CompareTag("Hit"))
         {
-            this.gameObject.SetActive(false);
+            health--; 
+            if(health <= 0)
+            {
+                Death();
+            }
         }
     }
 }
