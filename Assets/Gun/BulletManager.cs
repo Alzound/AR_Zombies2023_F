@@ -9,7 +9,10 @@ public class BulletManager : MonoBehaviour
     [Header("Player Input")]
     private InputAction touchAction;
     private PlayerInput playerInput;
-     
+
+    [Header("Player")]
+    public int health = 10;
+
 
     [Header("Effect")]
     public ParticleSystem effect;
@@ -58,9 +61,13 @@ public class BulletManager : MonoBehaviour
     private void Update()
     {
         currentTime += Time.deltaTime; //inicia un contador
-       
+        if (health <= 0)
+        {
+            Death();
+        }
+
     }
-    
+
     public GameObject getNewBullet() //esta funcion es para darle un objeto desactivado al input y que este lo active
     {
         if(amount > 0)
@@ -120,6 +127,11 @@ public class BulletManager : MonoBehaviour
             amount--;
             counterBullet.text = amount.ToString();
         }
+    }
+
+    private void Death()
+    {
+
     }
 
     public void ReloadGun()
