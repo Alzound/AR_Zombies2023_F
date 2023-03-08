@@ -1446,6 +1446,8 @@ GameObject:
   - component: {fileID: 1046086700}
   - component: {fileID: 1046086699}
   - component: {fileID: 1046086701}
+  - component: {fileID: 1046086703}
+  - component: {fileID: 1046086702}
   m_Layer: 0
   m_Name: BulletManager
   m_TagString: Untagged
@@ -1595,6 +1597,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!54 &1046086702
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046086696}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 1
+--- !u!65 &1046086703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046086696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1055528091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,10 +1843,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6856529127888484835, guid: 2930157e48cdace44990ff2b086ecf60,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hit
+      objectReference: {fileID: 0}
     - target: {fileID: 6856529127888484851, guid: 2930157e48cdace44990ff2b086ecf60,
         type: 3}
       propertyPath: m_Name
       value: ZombieCartoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856529127888484857, guid: 2930157e48cdace44990ff2b086ecf60,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hit
       objectReference: {fileID: 0}
     - target: {fileID: 6856529127888840083, guid: 2930157e48cdace44990ff2b086ecf60,
         type: 3}
@@ -3109,6 +3150,25 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 686777132}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977803934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6856529127888484857, guid: 2930157e48cdace44990ff2b086ecf60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1190643851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1977803938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977803934}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 0.147104, z: 0.13474485}
+  m_Center: {x: -0.42, y: -0.02247068, z: -0.060534235}
 --- !u!1 &2030901604
 GameObject:
   m_ObjectHideFlags: 0
