@@ -50,9 +50,9 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("Bullet"))
+        if(other.CompareTag("Bullet"))
         {
             isDeath = true; 
             if(animator.GetBool("walk") || animator.GetBool("attack"))
