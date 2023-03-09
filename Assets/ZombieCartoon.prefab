@@ -5775,7 +5775,7 @@ GameObject:
   - component: {fileID: 6856529127888840067}
   m_Layer: 0
   m_Name: ZombieCartoon RIGRArmCollarbone
-  m_TagString: Untagged
+  m_TagString: Hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6224,7 +6224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f3c37ae9a5e9046bc5d808d94f058a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.001
+  speed: 0.005
   player: {fileID: 0}
 --- !u!198 &4785639166879661215
 ParticleSystem:
@@ -11128,9 +11128,10 @@ GameObject:
   - component: {fileID: 6856529127888840089}
   - component: {fileID: 6856529127887512981}
   - component: {fileID: 6856529127886546773}
+  - component: {fileID: 1977803938}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11202,6 +11203,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1977803938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6856529127888484857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 0.147104, z: 0.13474485}
+  m_Center: {x: -0.42, y: -0.02247068, z: -0.060534235}
 --- !u!1 &6856529127888484859
 GameObject:
   m_ObjectHideFlags: 0

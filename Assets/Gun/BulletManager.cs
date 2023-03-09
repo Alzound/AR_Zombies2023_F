@@ -127,7 +127,7 @@ public class BulletManager : MonoBehaviour
 
     private void Death()
     {
-        this.gameObject.SetActive(false);
+      //  this.gameObject.SetActive(false);
     }
 
     public void ReloadGun()
