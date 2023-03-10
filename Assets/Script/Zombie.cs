@@ -15,6 +15,7 @@ public class Zombie : MonoBehaviour
     public float speed;
 
     public GameObject player;
+    [SerializeField] public GameObject warning;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +66,12 @@ public class Zombie : MonoBehaviour
             pSystem.Play();
             StartCoroutine(DeathSequence()); 
         }
+        if (other.CompareTag("Warning"))
+        {
+            Debug.Log("tocar");
+            warning.gameObject.SetActive(true);
+        }
+     
     }
 
     public IEnumerator DeathSequence() 

@@ -35,7 +35,10 @@ public class BulletManager : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI counterBullet;
     [SerializeField] public GameObject warningImage;
+    [SerializeField] public GameObject lost;
     
+
+
 
     private void Awake()
     {
@@ -127,7 +130,7 @@ public class BulletManager : MonoBehaviour
 
     private void Death()
     {
-      //  this.gameObject.SetActive(false);
+        lost.gameObject.SetActive(true);
     }
 
     public void ReloadGun()
